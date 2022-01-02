@@ -1,10 +1,10 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 import { program } from 'commander';
 
-import { Builder } from './lib/Builder.js';
-import { ProcessRunner } from './lib/ProcessRunner.js';
-import { getSourceAndDest } from './lib/getSourceAndDest.js';
+import { Builder } from './lib/Builder.mjs';
+import { ProcessRunner } from './lib/ProcessRunner.mjs';
+import { getSourceAndDest } from './lib/getSourceAndDest.mjs';
 
 program
   .version('0.0.1')

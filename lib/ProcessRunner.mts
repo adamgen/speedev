@@ -1,5 +1,5 @@
 import { execa, ExecaChildProcess } from 'execa';
-import { log } from './log.js';
+import { log } from './log.mjs';
 
 export class ProcessRunner {
   options: {

@@ -1,6 +1,6 @@
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 import { build, BuildOptions, BuildResult } from 'esbuild';
-import { log } from './log.js';
+import { log } from './log.mjs';
 
 const outputStatusIfExists = (result: BuildResult | null) => {
   if (!result) {
