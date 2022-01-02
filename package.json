@@ -8,7 +8,7 @@
     "validate:format": "prettier --ignore-path .gitignore --check ."
   },
   "bin": {
-    "speedev": "node --loader ts-node/esm . watch"
+    "speedev": "./index.ts"
   },
   "type": "module",
   "keywords": [],
