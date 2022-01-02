@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "format": "prettier --ignore-path .gitignore --write .",
     "validate:format": "prettier --ignore-path .gitignore --check ."
   },
   "bin": {
-    "speedev": "./index.ts"
+    "speedev": "./dist/index.js"
   },
   "type": "module",
   "keywords": [],
