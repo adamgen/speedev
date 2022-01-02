@@ -32,6 +32,6 @@ export class ProcessRunner {
       console.error(data.toString());
     });
 
-    this.spawnedInstance.on('close', (code) => {});
+    this.spawnedInstance.on('close', () => {});
   }
 }
