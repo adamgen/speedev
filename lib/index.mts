@@ -3,11 +3,11 @@
 import { program } from 'commander';
 import 'zx/globals'
 
-import { Builder } from './lib/Builder.mjs';
-import { ProcessRunner } from './lib/ProcessRunner.mjs';
-import { getSourceAndDest } from './lib/getSourceAndDest.mjs';
-import { getLocalVersion } from './lib/helpers/get-local-version.mjs';
-import { validateNpmVersion } from './lib/helpers/validate-npm-version.mjs';
+import { Builder } from './Builder.mjs';
+import { ProcessRunner } from './ProcessRunner.mjs';
+import { getSourceAndDest } from './getSourceAndDest.mjs';
+import { getLocalVersion } from './helpers/get-local-version.mjs';
+import { validateNpmVersion } from './helpers/validate-npm-version.mjs';
 
 program
   .version(getLocalVersion())

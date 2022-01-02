@@ -2,7 +2,7 @@
   "name": "speedev",
   "version": "0.0.4",
   "description": "",
-  "main": "index.mts",
+  "main": "lib/index.mts",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.json",
     "format": "prettier --ignore-path .gitignore --write .",
