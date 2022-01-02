@@ -9,6 +9,9 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "outDir": "dist",
+    "lib": [
+      "ES7"
+    ],
     "typeRoots": ["src/@types", "node_modules/@types"],
     "types": ["node"]
   }

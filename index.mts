@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
+import 'zx/globals'
 
 import { Builder } from './lib/Builder.mjs';
 import { ProcessRunner } from './lib/ProcessRunner.mjs';
 import { getSourceAndDest } from './lib/getSourceAndDest.mjs';
+import { getLocalVersion } from './lib/helpers/get-local-version.mjs';
+import { validateNpmVersion } from './lib/helpers/validate-npm-version.mjs';
 
 program
-  .version('0.0.1')
+  .version(getLocalVersion())
   .command('watch')
   .argument('<root-path>', 'Project root')
   .description('clone a repository into a newly created directory')
@@ -23,4 +26,5 @@ program
     builder.build();
   });
 
+await validateNpmVersion();
 program.parse();
