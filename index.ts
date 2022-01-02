@@ -1,3 +1,5 @@
+#!/usr/bin/env -S node -r "ts-node/register"
+
 import { program } from 'commander';
 
 import { Builder } from './lib/Builder.js';

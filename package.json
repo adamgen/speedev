@@ -1,12 +1,14 @@
 {
-  "name": "adams-test",
+  "name": "speedev",
   "version": "0.0.1",
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "node --loader ts-node/esm . watch ../back",
     "format": "prettier --ignore-path .gitignore --write .",
     "validate:format": "prettier --ignore-path .gitignore --check ."
+  },
+  "bin": {
+    "speedev": "node --loader ts-node/esm . watch"
   },
   "type": "module",
   "keywords": [],
