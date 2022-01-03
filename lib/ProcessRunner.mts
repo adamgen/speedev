@@ -18,6 +18,7 @@ export class ProcessRunner {
     }
     log.success('Starting a new zixi process');
     this.spawnedInstance = execa('node', [
+      '--enable-source-maps',
       '--inspect',
       '-r',
       'dotenv/config',
