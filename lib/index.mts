@@ -11,7 +11,8 @@ import { validateNpmVersion } from './helpers/validate-npm-version.mjs';
 
 program.version(getLocalVersion());
 
-program.command('watch', { isDefault: true })
+program
+  .command('watch', { isDefault: true })
   .argument('<root-path>', 'Project root')
   .description('Close to instant build, and run a node script')
   .action((baseDirectory) => {

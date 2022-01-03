@@ -11,8 +11,6 @@ export const getLocalVersion = () => {
     const packageJsonContents = fs.readJSONSync(packageJsonPath);
     return packageJsonContents.version;
   } catch (e) {
-    console.log(
-      chalk.red(`Can't get local npm version. Error: ${e.message}`),
-    );
+    console.log(chalk.red(`Can't get local npm version. Error: ${e.message}`));
   }
 };
