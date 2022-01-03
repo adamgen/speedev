@@ -25,13 +25,8 @@ export class ProcessRunner {
       this.options.dest,
     ]);
 
-    this.spawnedInstance.stdout?.on('data', (data) => {
-      console.log(data.toString());
-    });
-
-    this.spawnedInstance.stderr?.on('data', (data) => {
-      console.error(data.toString());
-    });
+    this.spawnedInstance.stdout.pipe(process.stdout);
+    this.spawnedInstance.stderr.pipe(process.stderr);
 
     this.spawnedInstance.on('close', () => {});
   }
