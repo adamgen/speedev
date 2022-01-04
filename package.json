@@ -2,7 +2,7 @@
   "name": "speedev",
   "version": "0.0.7",
   "description": "",
-  "main": "lib/index.mts",
+  "main": "dist/index.mjs",
   "scripts": {
     "dev": "run-p watch:*",
     "watch:run": "nodemon dist/index.mjs",
