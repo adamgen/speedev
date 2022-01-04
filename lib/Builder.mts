@@ -53,6 +53,8 @@ export class Builder {
           }
         },
       },
+    }).catch((e) => {
+      console.error(e);
     });
   }
 }
