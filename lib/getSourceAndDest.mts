@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 
-export const getSourceAndDest = (baseDirectory: string) => {
+export const getSourceAndDest = (baseDirectory: string, distDir: string) => {
   const sourceDir = path.join(process.cwd(), baseDirectory);
   if (!fs.existsSync(sourceDir)) {
     throw new Error(`Can't find file ${sourceDir}`);
@@ -14,7 +14,7 @@ export const getSourceAndDest = (baseDirectory: string) => {
     throw new Error(`Can't find file ${source}`);
   }
 
-  const dest = path.join(sourceDir, '_spdbld');
+  const dest = path.join(sourceDir, distDir, '_spdbld');
 
   return { source, dest };
 };

@@ -15,8 +15,9 @@ program
   .command('watch', { isDefault: true })
   .argument('<root-path>', 'Project root')
   .description('Close to instant build, and run a node script')
-  .action((baseDirectory) => {
-    const { source, dest } = getSourceAndDest(baseDirectory);
+  .option('-d ,--dist-dir <dirname>', 'destination dir for build files', 'dist')
+  .action((baseDirectory, { distDir }) => {
+    const { source, dest } = getSourceAndDest(baseDirectory, distDir);
 
     const builder = new Builder({ source, dest });
     const runner = new ProcessRunner({ dest });
