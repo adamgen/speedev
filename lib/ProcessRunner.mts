@@ -5,6 +5,7 @@ import path from 'path';
 export class ProcessRunner {
   options: {
     dest: string;
+    inspector: string;
   };
   spawnedInstance?: ExecaChildProcess;
 
@@ -25,13 +26,20 @@ export class ProcessRunner {
       this.spawnedInstance.kill();
     }
     log.success(`Starting a new ${processName} process`);
-    this.spawnedInstance = execa('node', [
+    const { inspector } = this.options;
+
+    let nodeArgs = [
       '--enable-source-maps',
-      '--inspect',
       '-r',
       'dotenv/config',
       this.options.dest,
-    ]);
+    ];
+
+    if (inspector) {
+      nodeArgs = [inspector, ...nodeArgs];
+    }
+
+    this.spawnedInstance = execa('node', nodeArgs);
 
     this.spawnedInstance.stdout.pipe(process.stdout);
     this.spawnedInstance.stderr.pipe(process.stderr);
